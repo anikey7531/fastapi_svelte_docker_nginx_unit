@@ -1,0 +1,5 @@
+fastapi==0.105.0
+
+# dev-requirements
+pytest==6.2.2
+requests==2.25.1

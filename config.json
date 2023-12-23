@@ -1,0 +1,28 @@
+{
+  "listeners": {
+    "*:80": {
+      "pass": "routes/http"
+    },
+    "*:8080": {
+      "pass": "applications/fastapi"
+    }
+  },
+  "routes": {
+    "http": [
+      {
+        "action": {
+          "share": "/code/static$uri"
+        }
+      }
+    ]
+  },
+  "applications": {
+    "fastapi": {
+      "type": "python 3",
+      "path": "/code/app",
+      "home": "/usr/local",
+      "module": "asgi",
+      "callable": "app"
+    }
+  }
+}
