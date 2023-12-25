@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-import uvicorn
+
 
 app = FastAPI()
 
@@ -9,7 +9,18 @@ async def index():
     """
     A simple Hello\qwda World GET request
     """
-    return {"message": "Helloo, World!"}
+    return {"message": "Hssssssssssssssssssss,!"}
 
-if __name__ == "__main__":
-    uvicorn.run("app.api:app", host="0.0.0.0", port=8081, reload=True)
+@app.post('/login')
+def login():
+    """Processes user's authentication and returns a token
+    on successful authentication.
+
+    request body:
+
+    - username: Unique identifier for a user e.g email, 
+                phone number, name
+
+    - password:
+    """
+    return "ThisTokenIsFake"

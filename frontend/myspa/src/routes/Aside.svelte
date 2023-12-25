@@ -29,7 +29,7 @@
 			  d="M4 6h16M4 12h8m-8 6h16"
 			/>
 		  </svg>
-		  <span>Списочная численность</span>
+		  <span>Меню 1</span>
 		</a>
 		<a
 		  href="/"
@@ -49,7 +49,7 @@
 			  d="M12 6v6m0 0v6m0-6h6m-6 0H6"
 			/>
 		  </svg>
-		  <span>Численность</span>
+		  <span>Меню 2</span>
 		</a>
 		<a
 		  href="/about"
@@ -69,7 +69,7 @@
 			  d="M13 10V3L4 14h7v7l9-11h-7z"
 			/>
 		  </svg>
-		  <span>Обучение</span>
+		  <span>Меню 3</span>
 		</a>
 	  </nav>
 	</div>

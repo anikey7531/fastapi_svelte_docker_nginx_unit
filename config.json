@@ -3,7 +3,7 @@
     "*:80": {
       "pass": "routes/http"
     },
-    "*:8080": {
+    "*:8000": {
       "pass": "applications/fastapi"
     }
   },

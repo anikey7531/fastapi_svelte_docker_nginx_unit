@@ -1,18 +1,38 @@
-version: "3.7"
+version: "3.9"
 
-services:     
-    api:  
-     container_name: fastapi
-     build: .
-     ports: 
-      - 80:80
-      - 8080:8080
+services:    
+    db:
+        image: postgres:12-alpine
+        container_name: fastapiapp_demodb
+        restart: always
+        environment:
+            - POSTGRES_DB=$POSTGRES_DB
+            - POSTGRES_USER=$POSTGRES_USER
+            - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+        networks:
+            - fastapiappnetwork
+
+    app:  
+        container_name: fastapi
+        build: .
+
+        depends_on:
+            - db
+        environment:
+            - POSTGRES_DB=$POSTGRES_DB
+            - POSTGRES_USER=$POSTGRES_USER
+            - POSTGRES_HOST=$POSTGRES_HOST
+            - POSTGRES_PORT=$POSTGRES_PORT
+            - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+        ports: 
+            - 80:80
+            - 8000:8000
+        volumes:
+            - ./backend:/code
+            - ./frontend/myspa/build:/code/static
+
+        networks:
+            - fastapiappnetwork
     
-# version: '3.7'
-
-# services:
-#   api:
-#     container_name: fastapi_demo
-#     build: .
-#     ports:
-#       - 80:80
+networks:
+  fastapiappnetwork:

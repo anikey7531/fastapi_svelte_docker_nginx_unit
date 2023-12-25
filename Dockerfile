@@ -14,3 +14,4 @@ COPY config.json /docker-entrypoint.d/config.json
 COPY  --chown=unit:unit ./backend/app /code/app
 # копирую статику
 COPY  --chown=unit:unit ./frontend/myspa/build /code/static
+EXPOSE 8000
