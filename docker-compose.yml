@@ -24,6 +24,7 @@ services:
             - POSTGRES_HOST=$POSTGRES_HOST
             - POSTGRES_PORT=$POSTGRES_PORT
             - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+            - SECRET_KEY=$SECRET_KEY
         ports: 
             - 80:80
             - 8000:8000
